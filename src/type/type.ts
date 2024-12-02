@@ -1,17 +1,26 @@
-// 블로그 포스트 타입 정의
-export type tempPost = {
-  id: string;
+export interface PostMatter {
   title: string;
-  excerpt: string;
   date: Date;
-  category: 'All' | '운영체제' | 'FE' | 'CS' | '일상';
+  dateString: string;
   image: string;
-};
+  excerpt: string;
+  id: string;
+  category: 'All' | '운영체제' | 'FE' | 'CS' | '일상';
+}
+
+export interface Post extends PostMatter {
+  content: string;
+}
 
 // 스니펫 타입 정의
-export type Snippet = {
+export type SnippetMatter = {
   id: number;
   title: string;
   tags: string[];
-  date: string;
+  date: Date;
+  dateString: string;
 };
+
+export interface Snippet extends SnippetMatter {
+  content: string;
+}
